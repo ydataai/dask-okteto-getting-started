@@ -1,0 +1,16 @@
+
+kind: Pod
+spec:
+  restartPolicy: Never
+  containers:
+  - image: daskdev/dask:2020.12.0
+    imagePullPolicy: IfNotPresent
+    args: [dask-worker, --nthreads, '2', --no-dashboard, --memory-limit, 6GB]
+    name: dask
+    resources:
+      limits:
+        cpu: "2"
+        memory: 6G
+      requests:
+        cpu: "2"
+        memory: 6G

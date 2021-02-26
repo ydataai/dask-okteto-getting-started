@@ -1,0 +1,13 @@
+name: dask-test
+image: python:3.8
+command: bash
+volumes:
+- /root/.cache/pip
+sync:
+- .:/usr/src/app
+forward:
+- 8787:8787
+reverse:
+- 9000:9000
+persistentVolume:
+  enabled: true
